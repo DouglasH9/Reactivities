@@ -1,0 +1,17 @@
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Application.deps.json
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Application.dll
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/ref/Application.dll
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Application.pdb
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Domain.dll
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Persistence.dll
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Persistence.pdb
+/Users/douglasherman/Reactivities/Application/bin/Debug/net6.0/Domain.pdb
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.csproj.AssemblyReference.cache
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.GeneratedMSBuildEditorConfig.editorconfig
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.AssemblyInfoInputs.cache
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.AssemblyInfo.cs
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.csproj.CoreCompileInputs.cache
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.csproj.CopyComplete
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.dll
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/ref/Application.dll
+/Users/douglasherman/Reactivities/Application/obj/Debug/net6.0/Application.pdb
