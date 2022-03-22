@@ -1,25 +1,48 @@
-import React from "react";
+import React, { ChangeEvent, useState } from "react";
 import { Button, Form, Segment } from "semantic-ui-react";
 import { Activity } from  "../../../app/models/activity";
 
 interface Props {
     activity: Activity | undefined;
     closeForm: () => void;
+    createOrEdit: (activity: Activity) => void;
 }
 
-export default function ActivityForm({activity, closeForm}: Props) {
+export default function ActivityForm({activity: selectedActivity, closeForm, createOrEdit}: Props) {
+
+    const intitialState = selectedActivity ?? {
+        id: "",
+        title: "",
+        category: "",
+        description: "",
+        date: "",
+        city: "",
+        venue: ""
+    }
+
+    const [activity, setActivity] = useState(intitialState);
+
+    function handleSubmit() {
+        createOrEdit(activity);
+    }
+
+    function handleInputChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
+        const {name, value} = e.target;
+        setActivity({...activity, [name]: value})
+    }
+
     return(
         <>
             <Segment clearing>
-                <Form>
-                    <Form.Input placeholder="Title"/>
-                    <Form.TextArea placeholder="Description"/>
-                    <Form.Input placeholder="Category"/>
-                    <Form.Input placeholder="Date"/>
-                    <Form.Input placeholder="City"/>
-                    <Form.Input placeholder="Venue"/>
+                <Form onSubmit={handleSubmit} autoComplete="off">
+                    <Form.Input placeholder="Title" value={activity.title} onChange={handleInputChange} name="title"/>
+                    <Form.TextArea placeholder="Description" value={activity.description} onChange={handleInputChange} name="description"/>
+                    <Form.Input placeholder="Category" value={activity.category} onChange={handleInputChange} name="category"/>
+                    <Form.Input placeholder="Date" value={activity.date} onChange={handleInputChange} name="date"/>
+                    <Form.Input placeholder="City" value={activity.city} onChange={handleInputChange} name="city"/>
+                    <Form.Input placeholder="Venue" value={activity.venue} onChange={handleInputChange} name="venue"/>
                     <Button floated="right" positive type="submit" content="Submit"/>
-                    <Button floated="right" type="button" content="Cancel"/>
+                    <Button onClick={closeForm} floated="right" type="button" content="Cancel"/>
                 </Form>
             </Segment>
         </>
