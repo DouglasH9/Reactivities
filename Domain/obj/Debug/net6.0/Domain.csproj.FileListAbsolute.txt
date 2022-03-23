@@ -1,6 +1,5 @@
 /Users/douglasherman/Reactivities/Domain/bin/Debug/net6.0/Domain.deps.json
 /Users/douglasherman/Reactivities/Domain/bin/Debug/net6.0/Domain.dll
-/Users/douglasherman/Reactivities/Domain/bin/Debug/net6.0/ref/Domain.dll
 /Users/douglasherman/Reactivities/Domain/bin/Debug/net6.0/Domain.pdb
 /Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/Domain.csproj.AssemblyReference.cache
 /Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/Domain.GeneratedMSBuildEditorConfig.editorconfig
@@ -10,3 +9,4 @@
 /Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/Domain.dll
 /Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/ref/Domain.dll
 /Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/Domain.pdb
+/Users/douglasherman/Reactivities/Domain/obj/Debug/net6.0/refint/Domain.dll

@@ -1,6 +1,5 @@
 /Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/Persistence.deps.json
 /Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/Persistence.dll
-/Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/ref/Persistence.dll
 /Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/Persistence.pdb
 /Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/Domain.dll
 /Users/douglasherman/Reactivities/Persistence/bin/Debug/net6.0/Domain.pdb
@@ -13,3 +12,4 @@
 /Users/douglasherman/Reactivities/Persistence/obj/Debug/net6.0/Persistence.dll
 /Users/douglasherman/Reactivities/Persistence/obj/Debug/net6.0/ref/Persistence.dll
 /Users/douglasherman/Reactivities/Persistence/obj/Debug/net6.0/Persistence.pdb
+/Users/douglasherman/Reactivities/Persistence/obj/Debug/net6.0/refint/Persistence.dll
