@@ -3,6 +3,63 @@ body {
 }
 
 .ui.inverted.top.fixed.menu {
-  background-image: linear-gradient(135deg, rgb(129, 36, 121) 0%, rgb(211, 43, 132) 69%, 
-  rgb(223, 117, 223) 89%) !important;
+  background-image: linear-gradient(135deg, rgb(205, 180, 219) 0%, rgb(255, 200, 221) 69%, 
+  rgb(255, 175, 204) 89%) !important;
+}
+
+.react-calendar {
+  width: 100%;
+  border: none;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+}
+
+/* color themes for button and general layout */
+#createBtn {
+  background-color: #59a2e7;
+}
+#activityViewBtn {
+  background-color: #A2D2FF;
+}
+#joinActivity {
+  background-color: #CDB4DB;
+}
+#manageEventBtn {
+  background-color: #FFAFCC;
+}
+#detailsIcon {
+  color: #A2D2FF;
+}
+#chatBanner {
+  background-color: #A2D2FF;
+}
+#sideBarBanner {
+  background-color: #A2D2FF;
+}
+
+/* Home Page styles */
+.masthead {
+  display: flex;
+  align-items: center;
+  background-image: linear-gradient(
+      135deg, 
+      rgb(205, 180, 219) 0%, 
+      rgb(255, 200, 221) 69%, 
+      rgb(255, 175, 204) 89%
+  ) !important;
+  height: 100vh;
+}
+
+.masthead .ui.menu .ui.button,
+.ui.menu a.ui.inverted.button {
+  margin-left: 0.5em;
+}
+
+.masthead h1.ui.header {
+  font-size: 4em;
+  font-weight: normal;
+}
+
+.masthead h2 {
+  font-size: 1.7em;
+  font-weight: normal;
 }
