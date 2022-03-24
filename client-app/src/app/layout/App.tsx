@@ -1,27 +1,25 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Container } from 'semantic-ui-react';
 import NavBar from './NavBar';
 import ActivityDashboard from '../../features/activities/dashboard/ActivityDashboard';
-import LoadingComponents from './LoadingComponents';
-import { useStore } from '../stores/store';
+import HomePage from '../../features/home/HomePage';
 import { observer } from 'mobx-react-lite';
+import { Route } from 'react-router-dom';
+import ActivityForm from '../../features/activities/form/ActivityForm';
+import ActivityDetails from '../../features/activities/details/ActivityDetails';
 
 
 
 function App() {
-  const {activityStore} = useStore();
-
-  useEffect(() => {
-    activityStore.loadActivities();
-  }, [activityStore]);
-
-  if (activityStore.loadingInitial) return <LoadingComponents content='Loading app'/>
 
     return (
       <>
         <NavBar />
         <Container style={{marginTop: "7em"}}>
-          <ActivityDashboard/>
+          <Route exact path="/" component={HomePage}/>
+          <Route exact path="/activities" component={ActivityDashboard}/>
+          <Route exact path="/activities/:id" component={ActivityDetails}/>
+          <Route exact path="/createActivity" component={ActivityForm}/>
         </Container>
       </>
     );
