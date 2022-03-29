@@ -1,5 +1,7 @@
+using Application.Activities;
 using AutoMapper;
 using Domain;
+using FluentValidation;
 using MediatR;
 using Persistence;
 
@@ -12,6 +14,15 @@ namespace API.Controllers
             public Activity Activity { get; set; }
         }
 
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+            public CommandValidator()
+            {
+                RuleFor(act => act.Activity).SetValidator(new ActivityValidator());
+            }
+        }
+
         public class Handler : IRequestHandler<Command>
         {
             private readonly DataContext _context;
@@ -20,7 +31,7 @@ namespace API.Controllers
             {
                 _mapper = mapper;
                 _context = context;
-                
+
             }
             public async Task<Unit> Handle(Command request, CancellationToken cancellationToken)
             {
