@@ -8,9 +8,6 @@ import reportWebVitals from './reportWebVitals';
 import { store, StoreContext } from './app/stores/store';
 import { BrowserRouter as Router } from 'react-router-dom';
 import {createBrowserHistory} from 'history';
-import type {BrowserHistory, HashHistory, MemoryHistory} from "history";
-
-export type RouterHistory = BrowserHistory | HashHistory | MemoryHistory
 
 export const history = createBrowserHistory();
 
