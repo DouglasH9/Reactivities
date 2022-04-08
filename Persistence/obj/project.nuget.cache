@@ -1,9 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "qUuXPdd0d2gVEpkd0jREQegpLIFZwoN0VSh97yVPEEDseSLgUPmJSYhRoS+FCklKcWItCjV3AJWiUtxOiOGmGA==",
+  "dgSpecHash": "SC5hXBtDjXb017KrDZVDJ4AjZI0aj2moB9lkJQo+eWbQRrdDbwYNiASWUYjnhQKbME44e4i6rzQJRiU/hbWu5g==",
   "success": true,
   "projectFilePath": "/Users/douglasherman/Reactivities/Persistence/Persistence.csproj",
   "expectedPackageFiles": [
+    "/Users/douglasherman/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.3/microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
+    "/Users/douglasherman/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.3/microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512",
+    "/Users/douglasherman/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.3/microsoft.aspnetcore.identity.entityframeworkcore.6.0.3.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.data.sqlite.core/6.0.3/microsoft.data.sqlite.core.6.0.3.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.entityframeworkcore/6.0.3/microsoft.entityframeworkcore.6.0.3.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.entityframeworkcore.abstractions/6.0.3/microsoft.entityframeworkcore.abstractions.6.0.3.nupkg.sha512",
@@ -17,6 +20,8 @@
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.dependencyinjection/6.0.0/microsoft.extensions.dependencyinjection.6.0.0.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.dependencyinjection.abstractions/6.0.0/microsoft.extensions.dependencyinjection.abstractions.6.0.0.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.dependencymodel/6.0.0/microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
+    "/Users/douglasherman/.nuget/packages/microsoft.extensions.identity.core/6.0.3/microsoft.extensions.identity.core.6.0.3.nupkg.sha512",
+    "/Users/douglasherman/.nuget/packages/microsoft.extensions.identity.stores/6.0.3/microsoft.extensions.identity.stores.6.0.3.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.logging.abstractions/6.0.0/microsoft.extensions.logging.abstractions.6.0.0.nupkg.sha512",
     "/Users/douglasherman/.nuget/packages/microsoft.extensions.options/6.0.0/microsoft.extensions.options.6.0.0.nupkg.sha512",
