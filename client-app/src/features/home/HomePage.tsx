@@ -13,7 +13,7 @@ export default function HomePage() {
                     Book Club
                 </Header>
                 <Header as="h2" inverted content="Welcome to The Book Club!"/>
-                <Button as={Link} to="/activities" size="huge" inverted>
+                <Button as={Link} to="/login" size="huge" inverted>
                     Let's see some books!
                 </Button>
             </Container>
