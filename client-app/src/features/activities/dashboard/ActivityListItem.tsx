@@ -1,7 +1,7 @@
 import {format} from "date-fns";
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, Icon, Item, Segment } from "semantic-ui-react";
+import { Button, Icon, Item, Label, Segment } from "semantic-ui-react";
 import { Activity } from "../../../app/models/activity";
 import ActivityListItemAttendee from "./ActivityListItemAttendee";
 
@@ -22,7 +22,22 @@ export default function ActivityListItem({activity}: Props) {
                             <Item.Header as={Link} to={`/activities/${activity.id}`} >
                                 {activity.title}
                             </Item.Header>
-                            <Item.Description>Chosen by Kirby</Item.Description>
+                            <Item.Description>Chosen by {activity.host?.displayName}</Item.Description>
+                            {/* {console.log(`${activity.isHost} ${activity.isGoing}`)} */}
+                            {activity.isHost && (
+                                <Item.Description>
+                                    <Label basic color="purple">
+                                        You chose this book
+                                    </Label>
+                                </Item.Description>
+                            )}
+                            {activity.isGoing && !activity.isHost && (
+                                <Item.Description>
+                                    <Label basic color="pink">
+                                        You are reading this book
+                                    </Label>
+                                </Item.Description>
+                            )}
                         </Item.Content>
                     </Item>
                 </Item.Group>
@@ -34,7 +49,7 @@ export default function ActivityListItem({activity}: Props) {
                 </span>
             </Segment>
             <Segment secondary>
-                <ActivityListItemAttendee/>
+                <ActivityListItemAttendee attendees={activity.attendees!} />
             </Segment>
             <Segment clearing>
                 <span>{activity.description}</span>

@@ -57,7 +57,7 @@ namespace API.Controllers
                 return ValidationProblem();
             }
 
-            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.Username))
+            if (await _userManager.Users.AnyAsync(x => x.UserName == registerDto.UserName))
             {
                 ModelState.AddModelError("username", "Username is already taken.");
                 return ValidationProblem();
@@ -67,7 +67,7 @@ namespace API.Controllers
             {
                 DisplayName = registerDto.DisplayName,
                 Email = registerDto.Email,
-                UserName = registerDto.Username
+                UserName = registerDto.UserName
             };
 
             var result = await _userManager.CreateAsync(user, registerDto.Password);
