@@ -23,6 +23,7 @@ interface Props {
 }
 
 export default observer(function ActivityDetailedHeader({ activity }: Props) {
+    
     return (
         <Segment.Group>
             <Segment basic attached='top' style={{ padding: '0' }}>
@@ -38,7 +39,7 @@ export default observer(function ActivityDetailedHeader({ activity }: Props) {
                                 />
                                 <p>{format(activity.date!, "dd MMM yyyy")}</p>
                                 <p>
-                                    Hosted by <strong>Bob</strong>
+                                    Chosen by <strong><Link to={`/profiles/${activity.host?.username}`}>{activity.host?.displayName}</Link></strong>
                                 </p>
                             </Item.Content>
                         </Item>
@@ -53,7 +54,7 @@ export default observer(function ActivityDetailedHeader({ activity }: Props) {
                 ) : activity.isGoing ? (
                     <Button>Cancel attendance</Button>
                 ) : (
-                    <Button id="joinActivity">Join Activity</Button>
+                    <Button id="joinActivity">Join Book Reading</Button>
                 )}
             </Segment>
         </Segment.Group>
