@@ -23,7 +23,7 @@ export default function ActivityListItem({activity}: Props) {
                                 {activity.title}
                             </Item.Header>
                             <Item.Description>Chosen by {activity.host?.displayName}</Item.Description>
-                            {console.log(`${activity.isHost} ${activity.isGoing}`)}
+                            {/* {console.log(`${activity.isHost} ${activity.isGoing}`)} */}
                             {activity.isHost && (
                                 <Item.Description>
                                     <Label basic color="purple">
