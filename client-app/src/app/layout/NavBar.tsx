@@ -19,7 +19,7 @@ export default observer (function NavBar() {
                 <Menu.Item as={NavLink} to="/activities" name="Activities"/>
                 <Menu.Item as={NavLink} to="/errors" name="Errors"/>
                 <Menu.Item>
-                    <Button id="createBtn" as={NavLink} to="/createActivity" content="Create Activity"/>
+                    <Button id="createBtn" as={NavLink} to="/createActivity" content="Add a Book!"/>
                 </Menu.Item>
                 <Menu.Item position="right">
                     <Image src={user?.image || "/assets/user.png"} avatar spaced="right" />
