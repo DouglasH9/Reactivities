@@ -27,14 +27,14 @@ export default function ActivityListItem({activity}: Props) {
                     <Item>
                         <Item.Image 
                             size="tiny" 
-                            circular src="/assets/user.png"
+                            circular src={activity.host || "/assets/user.png"}
                             style={{marginBottom: 3}}
                         />
                         <Item.Content>
                             <Item.Header as={Link} to={`/activities/${activity.id}`} >
                                 {activity.title}
                             </Item.Header>
-                            <Item.Description>Chosen by {activity.host?.displayName}</Item.Description>
+                            <Item.Description>Chosen by <Link to={`/profiles/${activity.hostUsername}`}>{activity.host?.displayName}</Link></Item.Description>
                             {/* {console.log(`${activity.isHost} ${activity.isGoing}`)} */}
                             {activity.isHost && (
                                 <Item.Description>
