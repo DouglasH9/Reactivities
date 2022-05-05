@@ -14,22 +14,30 @@ export default class CommentStore {
     createHubConnection = (activityId: string) => {
         if (store.activityStore.selectedActivity) {
             this.hubConnection = new HubConnectionBuilder()
-            .withUrl("http://localhost:5000/chat?activityId=" + activityId, {
-                accessTokenFactory: () => store.userStore.user?.token!
-            })
-            .withAutomaticReconnect()
-            .configureLogging(LogLevel.Information)
-            .build();
+                .withUrl("http://localhost:5000/chat?activityId=" + activityId, {
+                    accessTokenFactory: () => store.userStore.user?.token!
+                })
+                .withAutomaticReconnect()
+                .configureLogging(LogLevel.Information)
+                .build();
 
             this.hubConnection.start().catch(error => 
-                console.log("error establishing signalR connection..."));
+                console.log("error establishing signalR connection: ", error));
 
             this.hubConnection.on("LoadComments", (comments: ChatComment[]) => {
-                runInAction(() => this.comments = comments);
+                runInAction(() => {
+                    comments.forEach(comment => {
+                        comment.createdAt = new Date(comment.createdAt + "Z");
+                    })
+                    this.comments = comments;
+                });
             })
 
             this.hubConnection.on("ReceiveComment", (comment: ChatComment) => {
-                runInAction(() => this.comments.push(comment));
+                runInAction(() => {
+                    comment.createdAt = new Date(comment.createdAt);
+                    this.comments.push(comment);
+                });
             })
         }
     }
@@ -41,5 +49,14 @@ export default class CommentStore {
     clearComments = () => {
         this.comments = [];
         this.stopHubConnection();
+    }
+
+    addComment = async (values: any) => {
+        values.activityId = store.activityStore.selectedActivity?.id;
+        try {
+            await this.hubConnection?.invoke("SendComment", values);
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
