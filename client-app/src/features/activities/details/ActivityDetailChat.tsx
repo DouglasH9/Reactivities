@@ -39,6 +39,40 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                 <Header>Chat about this book</Header>
             </Segment>
             <Segment attached clearing>
+                <Formik
+                    onSubmit={(values, { resetForm }) =>
+                        commentStore.addComment(values).then(() => resetForm())}
+                    initialValues={{ body: "" }}
+                    validationSchema={Yup.object({
+                        body: Yup.string().required()
+                    })}
+                >
+                    {({ isSubmitting, isValid, handleSubmit }) => (
+                        <Form className='ui form'>
+                            <Field name="body">
+                                {(props: FieldProps) => (
+                                    <div style={{ position: "relative" }}>
+                                        <Loader active={isSubmitting} />
+                                        <textarea
+                                            placeholder="Let's give em somethin to talk about..."
+                                            rows={2}
+                                            {...props.field}
+                                            onKeyPress={e => {
+                                                if (e.key === "Enter" && e.shiftKey) {
+                                                    return;
+                                                }
+                                                if (e.key === "Enter" && !e.shiftKey) {
+                                                    e.preventDefault();
+                                                    isValid && handleSubmit();
+                                                }
+                                            }}
+                                        />
+                                    </div>
+                                )}
+                            </Field>
+                        </Form>
+                    )}
+                </Formik>
                 <Comment.Group>
                     {commentStore.comments.map(comment => (
                         <Comment key={comment.id}>
@@ -52,44 +86,10 @@ export default observer(function ActivityDetailedChat({ activityId }: Props) {
                                 <Comment.Metadata>
                                     <div>{formatDistanceToNow(comment.createdAt)} ago</div>
                                 </Comment.Metadata>
-                                <Comment.Text style={{whiteSpace: "pre-wrap"}}>{comment.body}</Comment.Text>
+                                <Comment.Text style={{ whiteSpace: "pre-wrap" }}>{comment.body}</Comment.Text>
                             </Comment.Content>
                         </Comment>
                     ))}
-                    <Formik
-                        onSubmit={(values, { resetForm }) =>
-                            commentStore.addComment(values).then(() => resetForm())}
-                        initialValues={{ body: ""}}
-                        validationSchema={Yup.object({
-                            body: Yup.string().required()
-                        })}
-                    >
-                        {({ isSubmitting, isValid, handleSubmit }) => (
-                            <Form className='ui form'>
-                                <Field name="body">
-                                    {(props: FieldProps) => (
-                                        <div style={{position: "relative"}}>
-                                            <Loader active={isSubmitting} />
-                                            <textarea 
-                                                placeholder="Let's give em somethin to talk about..."
-                                                rows={2}
-                                                {...props.field}
-                                                onKeyPress={e => {
-                                                    if (e.key === "Enter" && e.shiftKey) {
-                                                        return;
-                                                    }
-                                                    if (e.key === "Enter" && !e.shiftKey) {
-                                                        e.preventDefault();
-                                                        isValid && handleSubmit();
-                                                    }
-                                                }}
-                                            />
-                                        </div>
-                                    )}
-                                </Field>
-                            </Form>
-                        )}
-                    </Formik>
                 </Comment.Group>
             </Segment>
         </>
