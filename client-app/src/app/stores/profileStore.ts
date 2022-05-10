@@ -1,5 +1,4 @@
 import { makeAutoObservable, reaction, runInAction } from "mobx";
-import { HighlightSpanKind } from "typescript";
 import agent from "../API/agent";
 import { Photo, Profile } from "../models/profile";
 import { store } from "./store";
