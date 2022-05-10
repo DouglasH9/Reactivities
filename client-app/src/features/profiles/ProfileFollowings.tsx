@@ -7,11 +7,7 @@ import ProfileCard from "./ProfileCard";
 
 export default observer(function ProfileFollowings() {
     const {profileStore} = useStore();
-    const {profile, followings, loadFollowings, loadingFollowings} = profileStore;
-
-    useEffect(() => {
-        loadFollowings("following");
-    }, [loadFollowings])
+    const {profile, followings, loadingFollowings, activeTab} = profileStore;
 
     return (
         <Tab.Pane loading={loadingFollowings}>
@@ -19,7 +15,8 @@ export default observer(function ProfileFollowings() {
                 <Header 
                     // floated="left" 
                     icon="user" 
-                    content={`People following ${profile?.displayName}`} 
+                    content={activeTab === 3 ? `People following ${profile?.displayName}` :
+                `People ${profile?.displayName} is following`} 
                     style={{marginBottom: 10}}
                 />
             </Grid.Column>
