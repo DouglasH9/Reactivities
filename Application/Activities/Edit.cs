@@ -6,7 +6,7 @@ using FluentValidation;
 using MediatR;
 using Persistence;
 
-namespace API.Controllers
+namespace Application.Activities
 {
     public class Edit
     {
