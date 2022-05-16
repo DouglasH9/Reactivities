@@ -4,6 +4,8 @@ import { Activity, ActivityFormValues } from "../models/activity";
 import { format } from "date-fns";
 import { store } from "./store";
 import { Profile } from "../models/profile";
+import { Pagination } from "../models/pagination";
+
 
 export default class ActivityStore {
     activityRegistry = new Map<string, Activity>();
@@ -11,6 +13,7 @@ export default class ActivityStore {
     editMode = false;
     loading = false;
     loadingInitial = false;
+    pagination: Pagination | null = null;
 
     constructor() {
         makeAutoObservable(this)
@@ -34,15 +37,20 @@ export default class ActivityStore {
     loadActivities = async () => {
         this.loadingInitial = true;
         try {
-            const activities = await agent.Activities.list();
-            activities.forEach(activity => {
+            const result = await agent.Activities.list();
+            result.data.forEach(activity => {
                 this.setOneActivity(activity);
             })
+            this.setPagination(result.pagination);
             this.setLoadingInitial(false);
         } catch (err) {
             console.log(err)
             this.setLoadingInitial(false);
         }
+    }
+
+    setPagination = (pagination: Pagination) => {
+        this.pagination = pagination;
     }
 
     loadOneActivity = async (id: string) => {
