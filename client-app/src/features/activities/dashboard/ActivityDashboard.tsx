@@ -7,12 +7,13 @@ import { PagingParams } from "../../../app/models/pagination";
 import { useStore } from "../../../app/stores/store";
 import ActivityFilters from "./ActivityFilters";
 import ActivityList from "./ActivityList";
+import ActivityListItemPlaceholder from "./ActivityListItemPlaceholder";
 
 
-export default observer( function ActivityDashboard() {
+export default observer(function ActivityDashboard() {
 
-    const {activityStore} = useStore();
-    const {loadActivities, activityRegistry, setPagingParams, pagination} = activityStore
+    const { activityStore } = useStore();
+    const { loadActivities, activityRegistry, setPagingParams, pagination } = activityStore
     const [loadingNext, setLoadingNext] = useState(false);
 
     function handleGetNext() {
@@ -23,24 +24,29 @@ export default observer( function ActivityDashboard() {
 
     useEffect(() => {
         if (activityRegistry.size <= 1) loadActivities();
-        }, [activityRegistry.size, loadActivities]);
-        
-    if (activityStore.loadingInitial && !loadingNext) return <LoadingComponents content='Loading books...'/>
+    }, [activityRegistry.size, loadActivities]);
 
     return (
         <Grid>
             <Grid.Column width="10">
-                <InfiniteScroll
-                    pageStart={0}
-                    loadMore={handleGetNext}
-                    hasMore={!loadingNext && !!pagination && pagination.currentPage < pagination.totalPages}
-                    initialLoad={false}
-                >
-                    <ActivityList/>
-                </InfiniteScroll>
+                {activityStore.loadingInitial && !loadingNext ? (
+                    <>
+                        <ActivityListItemPlaceholder />
+                        <ActivityListItemPlaceholder />
+                    </>
+                ) : (
+                    <InfiniteScroll
+                        pageStart={0}
+                        loadMore={handleGetNext}
+                        hasMore={!loadingNext && !!pagination && pagination.currentPage < pagination.totalPages}
+                        initialLoad={false}
+                    >
+                        <ActivityList />
+                    </InfiniteScroll>
+                )}
             </Grid.Column>
             <Grid.Column width="6">
-                <ActivityFilters/>
+                <ActivityFilters />
             </Grid.Column>
             <Grid.Column width={10}>
                 <Loader active={loadingNext} />
