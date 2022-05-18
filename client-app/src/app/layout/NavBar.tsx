@@ -16,8 +16,8 @@ export default observer (function NavBar() {
                     <img src="/assets/logo.png" alt="logo" style={{marginRight: "12px"}}/>
                     Book Club
                 </Menu.Item>
-                <Menu.Item as={NavLink} to="/activities" name="Activities"/>
-                <Menu.Item as={NavLink} to="/errors" name="Errors"/>
+                <Menu.Item as={NavLink} to="/activities" name="Books"/>
+                {/* <Menu.Item as={NavLink} to="/errors" name="Errors"/> */}
                 <Menu.Item>
                     <Button id="createBtn" as={NavLink} to="/createActivity" content="Add a Book!"/>
                 </Menu.Item>

@@ -14,17 +14,17 @@ export default observer(function ActivityFilters() {
             <Menu vertical size="large" style={{ width: "100%", marginTop: 27 }}>
                 <Header icon="filter" attached color="purple" content="Filters" />
                 <Menu.Item 
-                    content="All Activities"
+                    content="All Books"
                     active={predicate.has("all")}
                     onClick={() => setPredicate("all", "true")}
                 />
                 <Menu.Item 
-                    content="I'll be going" 
+                    content="Books I'll be reading" 
                     active={predicate.has("isGoing")}
                     onClick={() => setPredicate("isGoing", "true")}
                 />
                 <Menu.Item 
-                    content="I'm hosting" 
+                    content="Books I chose" 
                     active={predicate.has("isHost")}
                     onClick={() => setPredicate("isHost", "true")}
                 />
