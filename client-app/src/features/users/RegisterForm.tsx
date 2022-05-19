@@ -43,7 +43,7 @@ export default observer (function RegisterForm() {
                     <Button 
                         disabled={!isValid || !dirty || isSubmitting}
                         loading={isSubmitting} 
-                        positive 
+                        primary 
                         content="Register" 
                         type="submit" 
                         fluid />
