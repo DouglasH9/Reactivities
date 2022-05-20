@@ -5,6 +5,7 @@ using Application.Activities;
 using Domain;
 using FluentValidation.AspNetCore;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
@@ -30,6 +31,21 @@ builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
+
+app.UseXContentTypeOptions();
+app.UseReferrerPolicy(opt => opt.NoReferrer());
+app.UseXXssProtection(opt => opt.EnabledWithBlockMode());
+app.UseXfo(opt => opt.Deny());
+app.UseCsp(opt => opt
+    .BlockAllMixedContent()
+    .StyleSources(s => s.Self().CustomSources("https://fonts.googleapis.com", "https://cdnjs.cloudflare.com", 
+        "http://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.2/semantic.min.css", "http://localhost:5000/semantic/dist/semantic.min.css"))
+    .FontSources(s => s.Self().CustomSources("https://fonts.gstatic.com", "data:", "https://cdnjs.cloudflare.com"))
+    .FormActions(s => s.Self())
+    .FrameAncestors(s => s.Self())
+    .ImageSources(s => s.Self().CustomSources("https://res.cloudinary.com", "http://localhost:5000", "data:", "blob:"))
+    .ScriptSources(s => s.Self().CustomSources("https://code.jquery.com/jquery-3.1.1.min.js"))
+    );
 
 if (app.Environment.IsDevelopment())
 {
