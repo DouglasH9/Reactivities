@@ -45,10 +45,10 @@ namespace Persistence
                 {
                     new Activity
                     {
-                        Title = "Past Activity 1",
-                        Date = DateTime.Now.AddMonths(-2),
-                        Description = "Activity 2 months ago",
-                        Category = "drinks",
+                        Title = "The old Man and the Bee",
+                        Date = DateTime.UtcNow.AddMonths(-2),
+                        Description = "A story about an old man and his magical bee.",
+                        Category = "fantasy",
                         City = "London",
                         Venue = "Pub",
                         Attendees = new List<ActivityAttendee>
@@ -62,10 +62,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Past Activity 2",
-                        Date = DateTime.Now.AddMonths(-1),
-                        Description = "Activity 1 month ago",
-                        Category = "culture",
+                        Title = "A Moveable Beast",
+                        Date = DateTime.UtcNow.AddMonths(-1),
+                        Description = "A beastly tale of one man's struggle against nature.",
+                        Category = "other",
                         City = "Paris",
                         Venue = "The Louvre",
                         Attendees = new List<ActivityAttendee>
@@ -84,12 +84,12 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 1",
-                        Date = DateTime.Now.AddMonths(1),
-                        Description = "Activity 1 month in future",
-                        Category = "music",
+                        Title = "The Night Stand",
+                        Date = DateTime.UtcNow.AddMonths(1),
+                        Description = "A genre defying story about a night stand.",
+                        Category = "other",
                         City = "London",
-                        Venue = "Wembly Stadium",
+                        Venue = "England",
                         Attendees = new List<ActivityAttendee>
                         {
                             new ActivityAttendee
@@ -106,10 +106,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 2",
-                        Date = DateTime.Now.AddMonths(2),
-                        Description = "Activity 2 months in future",
-                        Category = "food",
+                        Title = "The Starvation Games",
+                        Date = DateTime.UtcNow.AddMonths(2),
+                        Description = "Children fight to the death on a reality TV show to win food for their starving families.",
+                        Category = "young-adult",
                         City = "London",
                         Venue = "Jamies Italian",
                         Attendees = new List<ActivityAttendee>
@@ -128,10 +128,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 3",
-                        Date = DateTime.Now.AddMonths(3),
-                        Description = "Activity 3 months in future",
-                        Category = "drinks",
+                        Title = "A Fungus Among Us",
+                        Date = DateTime.UtcNow.AddMonths(3),
+                        Description = "Fungus!",
+                        Category = "science-fiction",
                         City = "London",
                         Venue = "Pub",
                         Attendees = new List<ActivityAttendee>
@@ -150,10 +150,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 4",
-                        Date = DateTime.Now.AddMonths(4),
-                        Description = "Activity 4 months in future",
-                        Category = "culture",
+                        Title = "Stars Hope Eternal",
+                        Date = DateTime.UtcNow.AddMonths(4),
+                        Description = "An epic sci-fi adventure.",
+                        Category = "science-fiction",
                         City = "London",
                         Venue = "British Museum",
                         Attendees = new List<ActivityAttendee>
@@ -167,10 +167,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 5",
-                        Date = DateTime.Now.AddMonths(5),
-                        Description = "Activity 5 months in future",
-                        Category = "drinks",
+                        Title = "The Lady of the Rings",
+                        Date = DateTime.UtcNow.AddMonths(5),
+                        Description = "A fashion oriented fantasy adventure.",
+                        Category = "fantasy",
                         City = "London",
                         Venue = "Punch and Judy",
                         Attendees = new List<ActivityAttendee>
@@ -189,10 +189,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 6",
-                        Date = DateTime.Now.AddMonths(6),
-                        Description = "Activity 6 months in future",
-                        Category = "music",
+                        Title = "The Wrong Stuff",
+                        Date = DateTime.UtcNow.AddMonths(6),
+                        Description = "It's a book.",
+                        Category = "young-adult",
                         City = "London",
                         Venue = "O2 Arena",
                         Attendees = new List<ActivityAttendee>
@@ -211,10 +211,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 7",
-                        Date = DateTime.Now.AddMonths(7),
-                        Description = "Activity 7 months in future",
-                        Category = "travel",
+                        Title = "Punks",
+                        Date = DateTime.UtcNow.AddMonths(7),
+                        Description = "A punky adventure.",
+                        Category = "other",
                         City = "Berlin",
                         Venue = "All",
                         Attendees = new List<ActivityAttendee>
@@ -233,10 +233,10 @@ namespace Persistence
                     },
                     new Activity
                     {
-                        Title = "Future Activity 8",
-                        Date = DateTime.Now.AddMonths(8),
-                        Description = "Activity 8 months in future",
-                        Category = "drinks",
+                        Title = "War and War",
+                        Date = DateTime.UtcNow.AddMonths(8),
+                        Description = "A book about war.",
+                        Category = "other",
                         City = "London",
                         Venue = "Pub",
                         Attendees = new List<ActivityAttendee>
