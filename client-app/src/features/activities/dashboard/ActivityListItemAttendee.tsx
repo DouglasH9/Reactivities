@@ -30,7 +30,7 @@ export default observer(function ActivityListItemAttendee({ attendees }: Props) 
                             to={`/profiles/${attendee.username}`}>
                             <Image 
                                 size="mini" 
-                                circular src={attendee.image || "client-app/public/user.png"}
+                                circular src={attendee.image || "/assets/user.png"}
                                 bordered
                                 style={attendee.following ? styles : null}
                             />
